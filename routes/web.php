@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\InstituteController;
+use App\Http\Controllers\ApplicationController;
+
 
 
 /*
@@ -26,9 +28,9 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/universities', [UniversityController::class, 'index']);
-//Route::get('/institutes', [InstituteController::class, 'index']);
+Route::get('/institutes', [InstituteController::class, 'index']);
 
-Route::get('/institutes', [InstituteController::class, 'index'])->name('institutes.index');
-Route::get('/request/{institute_id}/{course_id}', [InstituteController::class, 'showRequestForm'])
-    ->name('institutes.requestForm');
-    Route::post('/submit-request', [InstituteController::class, 'submitRequest'])->name('institutes.submitRequest');
+
+Route::get('/universities/{university}', [UniversityController::class, 'show'])->name('universities.show');
+
+Route::post('/applications', [ApplicationController::class, 'store'])->name('applications.store');
