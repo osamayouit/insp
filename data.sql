@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 10, 2025 at 05:48 PM
+-- Generation Time: Apr 12, 2025 at 11:27 AM
 -- Server version: 10.11.8-MariaDB-0ubuntu0.23.10.1
 -- PHP Version: 8.2.10-2ubuntu2.2
 
@@ -71,7 +71,8 @@ INSERT INTO `applications` (`id`, `created_at`, `updated_at`, `deleted_at`, `nam
 (17, '2025-04-10 14:27:25', '2025-04-10 14:27:25', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Yemen', 'Afghanistan', '7yo3acQSl2rM2NaqlT0Q.png', NULL, NULL, NULL, NULL),
 (18, '2025-04-10 14:33:54', '2025-04-10 14:33:54', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Yemen', 'Albania', '7yo3acQSl2rM2NaqlT0Q.png', NULL, NULL, NULL, NULL),
 (19, '2025-04-10 14:36:49', '2025-04-10 14:36:49', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Yemen', 'Afghanistan', 'apple-touch-icon.png', NULL, NULL, NULL, NULL),
-(20, '2025-04-10 14:45:21', '2025-04-10 14:45:21', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Yemen', 'Afghanistan', '7yo3acQSl2rM2NaqlT0Q.png', NULL, NULL, NULL, NULL);
+(20, '2025-04-10 14:45:21', '2025-04-10 14:45:21', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Yemen', 'Afghanistan', '7yo3acQSl2rM2NaqlT0Q.png', NULL, NULL, NULL, NULL),
+(21, '2025-04-12 07:19:34', '2025-04-12 07:19:34', NULL, 'Osama Ahmed', 'majors', 'lessons', NULL, '0718323599', '0718323599', 'Venezuela', 'Afghanistan', '1.png', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -362,7 +363,8 @@ INSERT INTO `courses` (`id`, `created_at`, `updated_at`, `deleted_at`, `name`) V
 (3, '2025-03-27 05:33:00', '2025-03-27 05:35:09', NULL, 0x32),
 (4, '2025-03-27 05:33:00', '2025-03-27 05:35:19', NULL, 0x33),
 (5, '2025-03-27 05:33:00', '2025-03-27 05:35:32', NULL, 0x34),
-(6, '2025-03-27 05:33:35', '2025-03-27 05:33:35', NULL, 0x35);
+(6, '2025-03-27 05:33:35', '2025-03-27 05:33:35', NULL, 0x35),
+(7, '2025-04-12 04:20:37', '2025-04-12 04:20:37', NULL, 0x4f73616d612041686d6564);
 
 -- --------------------------------------------------------
 
@@ -398,7 +400,8 @@ INSERT INTO `course_institutes` (`id`, `created_at`, `updated_at`, `deleted_at`,
 (13, NULL, NULL, NULL, 1, 5),
 (14, NULL, NULL, NULL, 2, 5),
 (15, NULL, NULL, NULL, 2, 6),
-(16, NULL, NULL, NULL, 1, 6);
+(16, NULL, NULL, NULL, 1, 6),
+(17, NULL, NULL, NULL, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -581,7 +584,23 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (159, 26, 'target_country', 'text', 'Target Country', 0, 1, 1, 1, 1, 1, '{}', 12),
 (160, 26, 'highschool_certificate', 'image', 'Highschool Certificate', 0, 1, 1, 1, 1, 1, '{}', 13),
 (161, 26, 'passport', 'image', 'Passport', 0, 1, 1, 1, 1, 1, '{}', 15),
-(162, 26, 'extra_file', 'file', 'Extra File', 0, 1, 1, 1, 1, 1, '{}', 17);
+(162, 26, 'extra_file', 'file', 'Extra File', 0, 1, 1, 1, 1, 1, '{}', 17),
+(163, 28, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(164, 28, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 0, 1, 1, 1, '{}', 2),
+(165, 28, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 1, 0, 1, '{}', 3),
+(166, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(167, 28, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, '{}', 5),
+(168, 28, 'institute_name', 'text', 'Institute Name', 0, 1, 1, 1, 1, 1, '{}', 6),
+(169, 28, 'course_name', 'text', 'Course Name', 0, 1, 1, 1, 1, 1, '{}', 7),
+(170, 28, 'father_country', 'text', 'Father Country', 0, 1, 1, 1, 1, 1, '{}', 8),
+(171, 28, 'target_country', 'text', 'Target Country', 0, 1, 1, 1, 1, 1, '{}', 9),
+(172, 28, 'father_phone', 'text', 'Father Phone', 0, 1, 1, 1, 1, 1, '{}', 10),
+(173, 28, 'student_phone', 'text', 'Student Phone', 0, 1, 1, 1, 1, 1, '{}', 11),
+(174, 28, 'highschool_certificate', 'text', 'Highschool Certificate', 0, 1, 1, 1, 1, 1, '{}', 12),
+(175, 28, 'university_certificate', 'text', 'University Certificate', 0, 1, 1, 1, 1, 1, '{}', 13),
+(176, 28, 'passport', 'text', 'Passport', 0, 1, 1, 1, 1, 1, '{}', 14),
+(177, 28, 'personal_photo', 'text', 'Personal Photo', 0, 1, 1, 1, 1, 1, '{}', 15),
+(178, 28, 'extra_file', 'text', 'Extra File', 0, 1, 1, 1, 1, 1, '{}', 16);
 
 -- --------------------------------------------------------
 
@@ -629,7 +648,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (16, 'requests', 'requests', 'Request', 'Requests', NULL, 'App\\Request', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2025-03-27 06:31:45', '2025-03-27 06:33:38'),
 (23, 'application_requests', 'application-requests', 'Application Request', 'Application Requests', NULL, 'App\\ApplicationRequest', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2025-04-06 07:30:12', '2025-04-06 07:30:21'),
 (26, 'applications', 'applications', 'Application', 'Applications', NULL, 'App\\Application', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2025-04-06 08:16:37', '2025-04-10 06:54:07'),
-(27, 'countries', 'countries', 'Country', 'Countries', NULL, 'App\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2025-04-09 13:24:38', '2025-04-09 13:24:38');
+(27, 'countries', 'countries', 'Country', 'Countries', NULL, 'App\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2025-04-09 13:24:38', '2025-04-09 13:24:38'),
+(28, 'messages', 'messages', 'Message', 'Messages', NULL, 'App\\Message', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2025-04-12 07:48:17', '2025-04-12 08:26:53');
 
 -- --------------------------------------------------------
 
@@ -837,7 +857,48 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (22, 1, 'Requests', '', '_self', NULL, NULL, NULL, 23, '2025-03-27 06:31:45', '2025-03-27 06:31:45', 'voyager.requests.index', NULL),
 (23, 1, 'Application Requests', '', '_self', NULL, NULL, NULL, 24, '2025-04-06 07:30:12', '2025-04-06 07:30:12', 'voyager.application-requests.index', NULL),
 (25, 1, 'Applications', '', '_self', NULL, NULL, NULL, 25, '2025-04-06 08:16:37', '2025-04-06 08:16:37', 'voyager.applications.index', NULL),
-(26, 1, 'Countries', '', '_self', NULL, NULL, NULL, 26, '2025-04-09 13:24:38', '2025-04-09 13:24:38', 'voyager.countries.index', NULL);
+(26, 1, 'Countries', '', '_self', NULL, NULL, NULL, 26, '2025-04-09 13:24:38', '2025-04-09 13:24:38', 'voyager.countries.index', NULL),
+(27, 1, 'Messages', '', '_self', NULL, NULL, NULL, 27, '2025-04-12 07:48:17', '2025-04-12 07:48:17', 'voyager.messages.index', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(222) DEFAULT NULL,
+  `institute_name` varchar(222) DEFAULT NULL,
+  `course_name` varchar(222) DEFAULT NULL,
+  `father_country` varchar(100) DEFAULT NULL,
+  `target_country` varchar(100) DEFAULT NULL,
+  `father_phone` varchar(50) DEFAULT NULL,
+  `student_phone` varchar(50) DEFAULT NULL,
+  `highschool_certificate` varchar(255) DEFAULT NULL,
+  `university_certificate` varchar(255) DEFAULT NULL,
+  `passport` varchar(255) DEFAULT NULL,
+  `personal_photo` varchar(255) DEFAULT NULL,
+  `extra_file` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `deleted_at`, `created_at`, `updated_at`, `name`, `institute_name`, `course_name`, `father_country`, `target_country`, `father_phone`, `student_phone`, `highschool_certificate`, `university_certificate`, `passport`, `personal_photo`, `extra_file`) VALUES
+(1, NULL, '2025-04-12 07:59:51', '2025-04-12 07:59:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, '2025-04-12 08:00:41', '2025-04-12 08:00:41', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, NULL, '2025-04-12 08:05:28', '2025-04-12 08:05:28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, NULL, '2025-04-12 08:07:14', '2025-04-12 08:07:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, NULL, '2025-04-12 08:07:42', '2025-04-12 08:07:42', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, NULL, '2025-04-12 08:07:54', '2025-04-12 08:07:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, NULL, '2025-04-12 08:10:07', '2025-04-12 08:10:07', 'Osama Ahmed', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, NULL, '2025-04-12 08:11:44', '2025-04-12 08:11:44', 'Osama Ahmed', NULL, NULL, 'Yemen', 'Andorra', '0718323599', '0718323599', '1.png', NULL, NULL, NULL, NULL),
+(9, NULL, '2025-04-12 08:16:41', '2025-04-12 08:26:05', 'Osama Ahmed', '2', '3', 'Yemen', 'Angola', '0718323599', '0718323599', '1.png', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1044,7 +1105,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (102, 'read_countries', 'countries', '2025-04-09 13:24:38', '2025-04-09 13:24:38'),
 (103, 'edit_countries', 'countries', '2025-04-09 13:24:38', '2025-04-09 13:24:38'),
 (104, 'add_countries', 'countries', '2025-04-09 13:24:38', '2025-04-09 13:24:38'),
-(105, 'delete_countries', 'countries', '2025-04-09 13:24:38', '2025-04-09 13:24:38');
+(105, 'delete_countries', 'countries', '2025-04-09 13:24:38', '2025-04-09 13:24:38'),
+(106, 'browse_messages', 'messages', '2025-04-12 07:48:17', '2025-04-12 07:48:17'),
+(107, 'read_messages', 'messages', '2025-04-12 07:48:17', '2025-04-12 07:48:17'),
+(108, 'edit_messages', 'messages', '2025-04-12 07:48:17', '2025-04-12 07:48:17'),
+(109, 'add_messages', 'messages', '2025-04-12 07:48:17', '2025-04-12 07:48:17'),
+(110, 'delete_messages', 'messages', '2025-04-12 07:48:17', '2025-04-12 07:48:17');
 
 -- --------------------------------------------------------
 
@@ -1161,7 +1227,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (102, 1),
 (103, 1),
 (104, 1),
-(105, 1);
+(105, 1),
+(106, 1),
+(107, 1),
+(108, 1),
+(109, 1),
+(110, 1);
 
 -- --------------------------------------------------------
 
@@ -1285,8 +1356,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('mg6ByDjimo2iM5bPUTVpTyEp2nPh1UhoSh70o8pG', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoibjlmQThjbmd3dVFIMzU5S0tvRUZtRWIyTUNhZUwzcFlzV29PcTRtNCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91bml2ZXJzaXRpZXMvMyI7fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1744307122),
-('Soau4C35KUYVQJFsgVuklmypYDwT8UOIjs1aIZUQ', NULL, '127.0.0.1', 'PostmanRuntime/7.43.2', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM3VjTGUzcVFvbVdQN1JRa0Y3RUs0RUxHb3h1OTQxMUhlSnRlTm5FRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744305577);
+('AjQnFTEqxUoFwohj48aTlUT9g3VlGfB0eZBBpQC5', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRmZrZEViTkZRdEY5eld6bE81VkVLcmFBeFJPNE5NTUY4d3A1QldDZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9tZXNzYWdlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1744457217),
+('c4kq8u8DosJpolk7aoEaYWdARuL3IxyGGRJ4HOsY', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiczlXSkpaallWanVSRU1QZWRpWXZnMTNNTmJoeDBFR2RwMlM5TldDeiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9hcHBsaWNhdGlvbnMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1744442679),
+('gwvJooxIDLJY16a2HMAiUJPIp8ymuJTpPy78z6dJ', NULL, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidWNYQVd2dlNOQVo1d1lWMXc0eUx1NHBwQkk0amJ3VkNQZ1B2ZmlPSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744441462);
 
 -- --------------------------------------------------------
 
@@ -1559,6 +1631,12 @@ ALTER TABLE `menu_items`
   ADD KEY `menu_items_menu_id_foreign` (`menu_id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -1678,7 +1756,7 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `application_requests`
@@ -1702,25 +1780,25 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `course_institutes`
 --
 ALTER TABLE `course_institutes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1768,7 +1846,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1786,7 +1870,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
