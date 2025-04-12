@@ -5,54 +5,40 @@ namespace App\Http\Controllers;
 use App\Institute;
 use App\Request as UserRequest;
 use Illuminate\Http\Request;
+use App\Country; // إضافة الـ Country model
 
-class InstituteController extends Controller
+class instituteController extends Controller
 {
-    // عرض قائمة المعاهد والكورسات
+    // عرض قائمة الجامعات فقط
     public function index()
     {
-        // استرجاع المعاهد مع الكورسات المرتبطة بها
-        $institutes = Institute::with('courses')->get();
+        $institutes = institute::all(); // بدون التخصصات
         return view('institutes.index', compact('institutes'));
     }
 
-    // عرض صفحة إرسال الطلب
-    public function showRequestForm($institute_id, $course_id)
+    // عرض صفحة التفاصيل لجامعة معينة مع التخصصات داخل الفورم
+    public function show($id)
     {
-        // الحصول على المعهد
-        $institute = Institute::findOrFail($institute_id);
+        // جلب الجامعة مع التخصصات
+        $institute = institute::with('courses')->findOrFail($id);
 
-        // البحث عن الكورس المرتبط بالمعهد باستخدام العلاقة
-        // تعديل هنا: تحديد `courses.id`
-        $course = $institute->courses()->where('courses.id', $course_id)->firstOrFail();
+        // جلب قائمة الدول
+        $countries = Country::all(); // استرجاع جميع الدول من قاعدة البيانات
 
-        // تخزين اسم المعهد واسم الكورس في الجلسة
-        session([
-            'institute_name' => $institute->name,
-            'course_name' => $course->name,
-        ]);
-
-        // عرض صفحة الطلب
-        return view('request', compact('institute', 'course'));
+        return view('institutes.show', compact('institute', 'countries')); // تمرير البيانات للـ view
     }
 
-    // حفظ الطلب في قاعدة البيانات
-    public function submitRequest(Request $request)
+    // عرض التخصص بشكل منفصل (يمكن حذفه إذا ما عاد يستخدم)
+    public function showcourse($id)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255',
-            'country_of_residence' => 'nullable|string|max:255',
-            'contact_number' => 'nullable|numeric',
-            'city_of_residence' => 'nullable|string|max:255',
-            'preferred_programme' => 'nullable|string|max:255',
-        ]);
+        $institute = institute::whereHas('courses', function ($query) use ($id) {
+            $query->where('courses.id', $id);
+        })->with(['courses' => function ($query) use ($id) {
+            $query->where('courses.id', $id);
+        }])->firstOrFail();
 
+        $course = $institute->courses->first();
 
-
-        // تفريغ الجلسة
-        session()->forget(['institute_name', 'course_name']);
-
-        return redirect()->route('institutes.index')->with('success', 'تم إرسال الطلب بنجاح!');
+        return view('institutes.show', compact('institute', 'course'));
     }
 }

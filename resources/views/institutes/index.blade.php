@@ -1,30 +1,50 @@
+<!-- resources/views/institutes/index.blade.php -->
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قائمة المعاهد والكورسات</title>
+    <title>قائمة الجامعات</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900">
-    <div class="container mx-auto p-6">
-        <h1 class="text-4xl font-bold text-center text-blue-700 mb-8">قائمة المعاهد والكورسات</h1>
+    <style>
+        .slide-up {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        .card:hover .slide-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+    <div class="max-w-7xl mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center text-green-700 mb-12">قائمة الجامعات</h1>
+        couse
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
             @foreach ($institutes as $institute)
-                <div class="bg-white shadow-lg rounded-2xl p-6 border-l-8 border-blue-500 hover:shadow-2xl hover:border-blue-700 transition duration-300 ease-in-out">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b pb-3">
-                        {{ $institute->name }}
-                    </h2>
-                    <ul class="space-y-2">
-                        @foreach ($institute->courses as $course)
-                            <li class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg shadow-md font-medium hover:bg-blue-200 transition duration-200 ease-in-out">
-                                <a href="{{ route('institutes.requestForm', ['institute_id' => $institute->id, 'course_id' => $course->id]) }}">
-                                    {{ $course->name }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                <div class="card bg-white shadow-xl rounded-2xl p-6 border-l-8 border-green-500 hover:border-green-700 transition duration-300 ease-in-out flex flex-col items-center text-center">
+
+                    {{-- صورة الجامعة --}}
+                    @if($institute->image)
+                        <img src="{{ asset('storage/' . $institute->image) }}" alt="{{ $institute->name }}" class="w-full h-48 object-cover rounded-xl mb-4 shadow">
+                    @else
+                        <div class="w-full h-48 bg-gray-200 rounded-xl mb-4 flex items-center justify-center text-gray-500">
+                            لا توجد صورة
+                        </div>
+                    @endif
+
+                    {{-- اسم الجامعة والوصف --}}
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">{{ $institute->name }}</h2>
+                    <p class="text-gray-600 text-sm mb-4">{!! $institute->body !!}</p>
+
+                    {{-- زر عرض التفاصيل --}}
+                    <a href="{{ route('institutes.show', ['institute' => $institute->id]) }}"
+                       class="slide-up mt-auto bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                        عرض التفاصيل والتقديم
+                    </a>
                 </div>
             @endforeach
         </div>
